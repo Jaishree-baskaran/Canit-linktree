@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import canitLogo from "@/assets/canit-logo.jpeg";
 import {
@@ -11,22 +10,6 @@ import {
   Download,
   ExternalLink,
 } from "lucide-react";
-
-export const Route = createFileRoute("/")(
-  {
-    component: HomePage,
-    head: () => ({
-      meta: [
-        { title: "canit Solutions — Official Links" },
-        {
-          name: "description",
-          content:
-            "All official canit Solutions links — website, LinkedIn, Facebook, Instagram, X, and company brochure.",
-        },
-      ],
-    }),
-  },
-);
 
 /* ── Data ──────────────────────────────────────────────── */
 
@@ -93,28 +76,43 @@ const fadeUp = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
   },
 };
 
-/* ── Page ──────────────────────────────────────────────── */
+/* ── App ───────────────────────────────────────────────── */
 
-function HomePage() {
+export default function App() {
   return (
-    <main className="relative min-h-dvh w-full overflow-hidden bg-[#0A1931]" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
+    <main
+      className="relative min-h-dvh w-full overflow-hidden bg-[#0A1931]"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
       {/* Ambient background */}
-      <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        aria-hidden="true"
+      >
         <div
           className="absolute -top-32 -left-32 h-[420px] w-[420px] rounded-full opacity-20 blur-[100px] animate-float"
-          style={{ background: "radial-gradient(circle, #64B5F6 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, #64B5F6 0%, transparent 70%)",
+          }}
         />
         <div
           className="absolute -right-24 top-1/3 h-[350px] w-[350px] rounded-full opacity-15 blur-[90px] animate-float-delayed"
-          style={{ background: "radial-gradient(circle, #E63946 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, #E63946 0%, transparent 70%)",
+          }}
         />
         <div
           className="absolute bottom-0 left-1/4 h-[300px] w-[300px] rounded-full opacity-10 blur-[80px] animate-pulse-glow"
-          style={{ background: "radial-gradient(circle, #64B5F6 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, #64B5F6 0%, transparent 70%)",
+          }}
         />
       </div>
 
@@ -124,7 +122,7 @@ function HomePage() {
         <motion.section
           initial={{ opacity: 0, y: 24, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           className="overflow-hidden rounded-t-[28px] bg-[#F5F0E6] px-6 pt-8 pb-7 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.6)]"
         >
           {/* Header */}

@@ -1,29 +1,18 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
 # Logs
-logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-.output
-.vinxi
-.tanstack/**
-.nitro
+# Environment
 *.local
+.env
 
-# Wrangler / Cloudflare
-.wrangler/
-.dev.vars
-
-# Lovable (removed — safety net)
-.lovable/
-
-# Editor directories and files
+# Editor
 .vscode/*
 !.vscode/extensions.json
 .idea
